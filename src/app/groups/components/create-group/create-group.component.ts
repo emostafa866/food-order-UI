@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-group.component.scss']
 })
 export class CreateGroupComponent {
-
+group:string="";
 }
