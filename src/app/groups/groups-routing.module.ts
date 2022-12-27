@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AllGroupsComponent } from './components/all-groups/all-groups.component';
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { GroupMenuComponent } from './components/group-menu/group-menu.component';
+import { GroupOrderComponent } from './components/group-order/group-order.component';
 
 const routes: Routes = [
   {path:"",component:AllGroupsComponent},
   {path:"create",component:CreateGroupComponent},
   {path:"group-menu",component:GroupMenuComponent},
+  {path:"group-order",component:GroupOrderComponent}
 ];
 
 @NgModule({

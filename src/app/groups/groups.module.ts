@@ -8,6 +8,8 @@ import { CreateGroupComponent } from './components/create-group/create-group.com
 import { GroupMenuComponent } from './components/group-menu/group-menu.component';
 import { SharedModule } from './../shared/shared.module';
 import { SingleFoodComponent } from './components/single-food/single-food.component';
+import { GroupOrderComponent } from './components/group-order/group-order.component';
+import { SingleOrderComponent } from './single-order/single-order.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { SingleFoodComponent } from './components/single-food/single-food.compon
     GroupCardComponent,
     CreateGroupComponent,
     GroupMenuComponent,
-    SingleFoodComponent
+    SingleFoodComponent,
+    GroupOrderComponent,
+    SingleOrderComponent
   ],
   imports: [
     SharedModule,

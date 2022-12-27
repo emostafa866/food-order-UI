@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-group-menu',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class GroupMenuComponent {
 
+  constructor(private router:Router){
+
+  }
+
+  viewGroupOrder(){
+    this.router.navigate(['group/group-order'])
+  }
 }
