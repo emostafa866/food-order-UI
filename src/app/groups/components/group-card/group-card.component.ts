@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./group-card.component.scss']
 })
 export class GroupCardComponent {
-
+  loggedIn() {
+    return localStorage.getItem('auth')
+  }
 }

@@ -8,11 +8,17 @@ import { SharedService } from 'src/app/shared/sevice/shared.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
- 
-  constructor(public sharedService :SharedService , private router:Router){}
+
+  constructor(public sharedService: SharedService, private router: Router) { }
   ngOnInit(): void {
   }
-
+  loggedIn() {
+    return localStorage.getItem('auth')
+  }
+  logOut(){
+    localStorage.removeItem('auth')
+    this.router.navigate(['/auth/login'])
+  }
 }
