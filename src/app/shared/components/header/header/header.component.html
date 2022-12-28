@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#" style="color: #FF6605 ;"><img style="height: 50px;" src="https://dynamic.brandcrowd.com/asset/logo/3b80a94e-3e91-4d73-a3d5-e5bf738f8d20/logo-search-grid-1x?v=637622859003600000"/></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,20 +8,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link " aria-current="page" [routerLink]="['/group']"
               routerLinkActive="router-link-active">Groups</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/group/create']"
+            <a class="nav-link"*ngIf="loggedIn()" aria-current="page" [routerLink]="['/group/create']"
               routerLinkActive="router-link-active">Create Groups</a>
           </li>
         </ul>
-          <a class="btn btn-outline-primary" routerLink="auth/login">Login</a>
-          <a class="btn btn-outline-primary" routerLink="auth/signup" style="margin-left: 5px;" >SignUp</a>
-        <button class="btn btn-outline-danger" type="submit" style="margin-left: 5px;">LogOut </button>
+          <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/login">Login</a>
+          <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/signup" style="margin-left: 5px;" >SignUp</a>
+        <button *ngIf="loggedIn()" (click)="logOut()" class="btn btn-outline-danger" type="submit" style="margin-left: 5px;">LogOut </button>
       </div>
     </div>
   </nav>

@@ -1,14 +1,46 @@
 <div class="body">
     <h2 class="text-center mt-5"> Login</h2>
-    <form #f="ngForm">
-        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
-        <div id="validation" class="alert alert-danger" *ngIf=" email.touched && email.errors?.['required']"> Email is required </div>
-        <div id="validation" class="alert alert-danger" *ngIf=" email.touched && email.errors?.['email']"> wrong email format</div>
+    <form (ngSubmit)="onSubmit_Sign_In()" #signIn="ngForm">
+        <input ngModel name="email" #email="ngModel" type="email" [(ngModel)]="user.email" class="form-control"
+            placeholder="Email" required email>
+        <div id="validation" class="alert alert-danger" *ngIf=" email.touched && email.errors?.['required']"> Email is
+            required </div>
+        <div id="validation" class="alert alert-danger" *ngIf=" email.touched && email.errors?.['email']"> wrong email
+            format</div>
 
-        <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
-        <div id="validation" class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']"> password is required </div>
-        <div id="validation" class="alert alert-danger" *ngIf=" password.touched && password.errors?.['minlength']"> password should be 6 at least 6 charcter</div>
+        <input ngModel name="password" #password="ngModel" [(ngModel)]="user.password" type="password"
+            class="form-control" placeholder="Password" required minlength="6">
+        <div id="validation" class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">
+            password is required </div>
+        <div id="validation" class="alert alert-danger" *ngIf=" password.touched && password.errors?.['minlength']">
+            password should be 6 at least 6 charcter</div>
 
-        <button class="btn btn-primary" [disabled]="f.invalid" >Login</button>
+        <button class="btn btn-primary" [disabled]="signIn.invalid">Login</button>
     </form>
+    <div *ngIf="wating" style="text-align: center;">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 </div>

@@ -3,6 +3,6 @@
       <h5 class="card-title">Name of Restaurant</h5>
       <hr/>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a routerLink="group-menu" class="btn btn-primary">Join Group</a>
+      <a routerLink="group-menu" *ngIf="loggedIn()" class="btn btn-primary">Join Group</a>
     </div>
   </div>
