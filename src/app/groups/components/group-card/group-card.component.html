@@ -1,9 +1,10 @@
 <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{group.restaurant.name}}</h5>
-      <hr/>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a [routerLink]="['group-menu',group.id]" *ngIf="loggedIn()"  class="btn btn-primary">Join Group</a>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">{{group.restaurant.name}}</h5>
+    <hr />
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <a (click)="onClick(group.id)" *ngIf="!is_owner &&loggedIn()" class="btn btn-primary">Join Group</a>
+    <a [routerLink]="['group-menu',group.id]" *ngIf="is_owner" class="btn btn-success">Enter Group</a>
   </div>
-  
+</div>

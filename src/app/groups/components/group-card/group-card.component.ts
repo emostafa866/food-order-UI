@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { GroupService } from '../../group.service';
 
 @Component({
   selector: 'app-group-card',
@@ -9,12 +10,33 @@ import { Router } from '@angular/router';
 export class GroupCardComponent {
 
   @Input() group: any;
+  user_ask_join:any={groupId:0}
+  is_owner: boolean = false;
 
-  constructor( private router: Router){}
+  constructor(private router: Router, private groupServ: GroupService) { }
+
+  ngOnInit(): void {
+    if (this.loggedIn()) {
+      this.groupServ.isOwner(this.group.id).subscribe((res: any) => {
+        this.is_owner = res;
+        console.log(res)
+      }, error => {
+        alert("Error in Get Data Owner")
+      });
+    }
+  }
 
   loggedIn() {
     return localStorage.getItem('auth')
   }
+  onClick(id:number) {
+    this.user_ask_join.groupId=id
+    console.log(this.user_ask_join)
+    this.groupServ.askToJoin(this.user_ask_join).subscribe((res: any) => {
+      console.log("succues join")
+    }, error => {
+      alert("Error to join")
+    })
+  }
 
-  
 }

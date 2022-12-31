@@ -6,12 +6,11 @@ import { GroupService } from '../../group.service';
   templateUrl: './all-groups.component.html',
   styleUrls: ['./all-groups.component.scss']
 })
-export class AllGroupsComponent  {
+export class AllGroupsComponent   {
   groups:any=[]
   ngOnInit(): void {
 
       this.getGroups();
-
   }
 
   constructor(private groupServ:GroupService){}

@@ -1,8 +1,8 @@
-
 export interface GroupCreation{
 
-     title:String;
-     anyOneCanJoinWithoutRequest:String;
-     restaurantId:String;
+    title:String;
+    anyOneCanJoinWithoutRequest:String;
+    restaurantId:String;
 
 }
+

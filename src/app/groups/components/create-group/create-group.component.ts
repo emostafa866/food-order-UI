@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { GroupCreation } from '../../group';
 import { GroupService } from '../../group.service';
@@ -7,6 +8,7 @@ import { GroupService } from '../../group.service';
   templateUrl: './create-group.component.html',
   styleUrls: ['./create-group.component.scss']
 })
+
 export class CreateGroupComponent implements OnInit
  {
 
@@ -16,10 +18,10 @@ restaurant:any;
 restaurantId:any;
   constructor(private groupService:GroupService){}
 
-
   ngOnInit(): void {
     this.viewRest();
   }
+
 
 
     viewRest(){
