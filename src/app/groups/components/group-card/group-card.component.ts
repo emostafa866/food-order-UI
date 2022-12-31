@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-group-card',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./group-card.component.scss']
 })
 export class GroupCardComponent {
+
+  @Input() group: any;
+
+  constructor( private router: Router){}
+
   loggedIn() {
     return localStorage.getItem('auth')
   }
+
+  
 }

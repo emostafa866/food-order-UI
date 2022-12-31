@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-single-food',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./single-food.component.scss']
 })
 export class SingleFoodComponent {
+  qty: number = 1;
+
+  @Input() food: any ;
 
 }

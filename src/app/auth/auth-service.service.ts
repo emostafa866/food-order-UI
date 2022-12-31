@@ -10,11 +10,7 @@ import { UserRegister } from './user-register';
 export  class AuthServiceService {
 
 
-  get token(){
-    return localStorage.getItem('auth')
-  }
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   public login(user: UserLogin) {
 

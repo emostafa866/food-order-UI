@@ -1,14 +1,17 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Name of food</h5>
-        <p class="card-text">Descrpiont</p>
+        <h5 class="card-title">{{food.name}}</h5>
+        <p class="card-text">Price : {{food.price}} $</p>
         <div class="row justify-content-md-center">
             <label for="inputZip" class="form-label">Qty :</label>
-            <input type="number" class="form-control" id="inputZip" placeholder="1"style="width: 80px;">
+            <input type="number" class="form-control" id="inputZip" placeholder="1"style="width: 80px;"[(ngModel)]="qty">
             <label for="inputZip" class="form-label">Comment :</label>
             <input type="text" placeholder="Any Comment of food" class="form-control" id="inputZip"style="width: 280px;" >
         </div>
+        <p class="fw-bold" style="color: #198754;font-size: 20px;">Total Price : {{qty*food.price}}$</p>
+    
         <hr/>
         <a href="#" class="btn btn-primary">Add</a>
     </div>
 </div>
+<!-- {{qty*food.price}} -->

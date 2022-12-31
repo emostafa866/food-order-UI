@@ -1,14 +1,8 @@
 
 <div class="container text-center"style="margin-top:10px ;">
     <div class="row">
-      <div class="col">
-        <app-group-card></app-group-card>
-      </div>
-      <div class="col">
-        <app-group-card></app-group-card>
-      </div>
-      <div class="col">
-        <app-group-card></app-group-card>
+      <div class="col" *ngFor="let group of groups">
+        <app-group-card [group] ="group"></app-group-card>
       </div>
     </div>
   </div>
