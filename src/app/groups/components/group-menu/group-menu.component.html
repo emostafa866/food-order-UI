@@ -1,9 +1,19 @@
 <div class="container text-center " style="margin-top: 15px; margin-bottom: 10px ;padding: 10px;">
     <div class="row">
-        <div class="col">
-            Column
+        <div class="col-2" style="background-color: gainsboro;">
+            <ul class="list-group">
+                <li class="list-group-item disabled" style="background-color: #0d6efd;color:white;"
+                    aria-disabled="true">User need to Join Group</li>
+                <li class="list-group-item" *ngFor="let user of users_join">
+                    <div class="row">
+                        <div class="col">{{user.name}}</div>
+                        <div class="col"><button type="button"(click)="acceptUser(user.id)" class="btn btn-primary">Ok</button></div>
+                    </div> 
+                </li>
+
+            </ul>
         </div>
-        <div class="col-8">
+        <div class="col-7">
             <div *ngFor="let food of foods" style="margin-top: 10px;">
                 <app-single-food [food]="food"></app-single-food>
             </div>

@@ -21,7 +21,7 @@ export class SignupComponent {
   onSubmit_Sign_Up() {
     this.wating=true;
     
-       
+       console.log(this.user)
       this.authService.register(this.user).subscribe(r => {
          
         console.log(r)

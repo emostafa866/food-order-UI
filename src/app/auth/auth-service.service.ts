@@ -7,11 +7,13 @@ import { UserRegister } from './user-register';
 @Injectable({
   providedIn: 'root'
 })
-export  class AuthServiceService {
+export class AuthServiceService {
 
-  
-  constructor(private http: HttpClient) {
-    
+
+  constructor(private http: HttpClient) { }
+
+  get token() {
+    return localStorage.getItem('auth')
   }
 
   public login(user: UserLogin) {
