@@ -22,6 +22,7 @@ export class SignupComponent {
     this.wating=true;
     
        console.log(this.user)
+
       this.authService.register(this.user).subscribe(r => {
          
         console.log(r)

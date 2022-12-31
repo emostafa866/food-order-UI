@@ -5,3 +5,4 @@ export interface GroupCreation{
     restaurantId:String;
 
 }
+
