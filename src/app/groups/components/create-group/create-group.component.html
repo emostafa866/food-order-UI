@@ -1,26 +1,23 @@
-<form  #groupForm="ngForm">
+<form  #groupForm="ngForm" (ngSubmit)="addGroup(groupForm)">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title Name</label>
      
-      <input type="text" [(ngModel)]="group" class="form-control" id="name" name="name"
-                            placeholder="Enter your name" ngModel required #name="ngModel" />
+      <input type="text" class="form-control" id="name" name="title" placeholder="Enter your name" ngModel required #title="ngModel" />
       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Any One Can Join Without Request</label>
-      <select class="form-select" aria-label="Default select example">
+      <select [(ngModel)]="group_privacy" name="select1" class="form-select" aria-label="Default select example">
         <option selected>false</option>
         <option value="1">true</option> 
       </select>
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Choose Restaurant</label>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Restaurant2</option> 
-          <option value="2">Restaurant1</option> 
+        <select [(ngModel)]="restaurant" name="select2" class="form-select" aria-label="Default select example">
+          <option *ngFor="let retaurant of data" value="{{retaurant.id}}">{{retaurant.name}}</option> 
         </select>
       </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!groupForm.form.valid" >Add Group</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!groupForm.form.valid">Add Group</button>
   </form>
   

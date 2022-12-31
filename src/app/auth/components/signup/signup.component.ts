@@ -20,12 +20,7 @@ export class SignupComponent {
   
   onSubmit_Sign_Up() {
     this.wating=true;
-    if (this.authService.loggedIn) {
-      
-      alert("You are already login")
-      
-      this.wating=false;
-    } else {
+
        
       this.authService.register(this.user).subscribe(r => {
          
@@ -40,7 +35,7 @@ export class SignupComponent {
         
         this.wating=false;
       })
-    }
+    
   }
   
 }
