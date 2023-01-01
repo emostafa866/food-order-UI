@@ -1,22 +1,22 @@
-<div class="cartBox">
-    <h1>User 1  order</h1>
+<div *ngFor="let orderSumm of OrderSummary " class="cartBox">
+    <h1>{{orderSumm.username}}</h1>
     <div class="headCart">
     </div>
     <table class="table table-striped">
-        <thead>
-            <tr>
+        <thead >
+            <tr >
                 <th>order details :</th>
             </tr>
         </thead>
         <tbody>
-            <tr >
-                <p> 1 chicken , 2 burger , 3 pasta </p>
+            <tr *ngFor="let orders of orderSumm.orders">
+                <p *ngFor="let item of orders.items"><label class="text-danger">item :</label> {{item.food.name}}  <label class="text-danger">  quantity :</label>{{item.quantity}}  <label class="text-danger">  price :</label> {{item.subOrderPrice}}</p>
             </tr>
         </tbody>
         <tfoot>
-            <tr>
+            <tr *ngFor="let orders of orderSumm.orders">
 
-                <th> order Price  : 150 LE</th>
+                <th> Order Price : {{orders.orderPrice}}</th>
             </tr>
         </tfoot>
     </table>

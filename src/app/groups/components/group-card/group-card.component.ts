@@ -12,6 +12,8 @@ export class GroupCardComponent {
   @Input() group: any;
   user_ask_join:any={groupId:0}
   is_owner: boolean = false;
+  isGroupUser: boolean = false;
+
 
   constructor(private router: Router, private groupServ: GroupService) { }
 
@@ -20,9 +22,13 @@ export class GroupCardComponent {
       this.groupServ.isOwner(this.group.id).subscribe((res: any) => {
         this.is_owner = res;
         console.log(res)
-      }, error => {
-        alert("Error in Get Data Owner")
       });
+
+      this.groupServ.isGroupUser(this.group.id).subscribe((res:any)=>{
+
+        this.isGroupUser=res;
+
+      })
     }
   }
 

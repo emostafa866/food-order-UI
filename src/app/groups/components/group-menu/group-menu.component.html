@@ -1,9 +1,9 @@
 <div class="container text-center " style="margin-top: 15px; margin-bottom: 10px ;padding: 10px;">
     <div class="row">
-        <div class="col-2" style="background-color: gainsboro;">
+        <div *ngIf="is_owner" class="col-2" style="background-color: gainsboro;">
             <ul class="list-group">
                 <li class="list-group-item disabled" style="background-color: #0d6efd;color:white;"
-                    aria-disabled="true">User need to Join Group</li>
+                    aria-disabled="true">Join Requests</li>
                 <li class="list-group-item" *ngFor="let user of users_join">
                     <div class="row">
                         <div class="col">{{user.name}}</div>
@@ -15,7 +15,7 @@
         </div>
         <div class="col-7">
             <div *ngFor="let food of foods" style="margin-top: 10px;">
-                <app-single-food [food]="food"></app-single-food>
+                <app-single-food [food]="food" (item)="addToCart($event)"></app-single-food>
             </div>
         </div>
         <div class="col">
@@ -23,15 +23,29 @@
             <div class="container" class="border border-primary" style="margin-top:10px ;">
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
                     data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
-                    <h4 id="scrollspyHeading1">Item 1</h4>
-                    <p>...</p>
-                    <hr />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of carItems;let index=index">
+                                <td>{{item.foodItem.name}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td><i class="fa fa-trash" aria-hidden="true" (click)="deleteItem(index)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
                 </div>
             </div>
             <hr />
             <div>
-                <button type="button" class="btn btn-success">Order</button>
-                <button type="button" class="btn btn-secondary" style="margin-left:2px;" (click)="viewGroupOrder()">View
+                <button type="button" class="btn btn-success" (click)="createOrder()">Order</button>
+                <button type="button" class="btn btn-secondary" style="margin-left:2px;"*ngIf="is_owner" (click)="viewGroupOrder()">View
                     Order</button>
             </div>
         </div>

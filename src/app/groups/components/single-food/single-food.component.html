@@ -2,16 +2,14 @@
     <div class="card-body">
         <h5 class="card-title">{{food.name}}</h5>
         <p class="card-text">Price : {{food.price}} $</p>
-        <div class="row justify-content-md-center">
-            <label for="inputZip" class="form-label">Qty :</label>
+        <div *ngIf="!addButton" class="row justify-content-md-center">
+            <label for="inputZip" class="form-label">Quantity :</label>
             <input type="number" class="form-control" id="inputZip" placeholder="1"style="width: 80px;"[(ngModel)]="qty">
-            <label for="inputZip" class="form-label">Comment :</label>
-            <input type="text" placeholder="Any Comment of food" class="form-control" id="inputZip"style="width: 280px;" >
+            <label for="inputZip" class="form-label" >Comment :</label>
+            <input type="text" [(ngModel)]="comment" placeholder="Any Comment of food" class="form-control" id="inputZip"style="width: 280px;" >
+            <p class="fw-bold" style="color: #198754;font-size: 20px;">Total Price : {{qty*food.price}}$</p>
         </div>
-        <p class="fw-bold" style="color: #198754;font-size: 20px;">Total Price : {{qty*food.price}}$</p>
-    
         <hr/>
-        <a href="#" class="btn btn-primary">Add</a>
+        <button class="btn btn-primary" *ngIf="!addButton" (click)="add();addButton=true">Add</button>
     </div>
 </div>
-<!-- {{qty*food.price}} -->
