@@ -1,0 +1,17 @@
+<div  class="cartBox">
+    <h1></h1>
+    <div class="headCart">
+    </div>
+<table>
+  <tr>
+    <th class="header">Item</th>
+    <th class="header">Quantity</th>
+    <th class="header">Price</th>
+  </tr>
+  <tr *ngFor="let item of orderItems">
+    <td>{{item.item}}</td>
+    <td>{{item.quantity}}</td>
+    <td>{{item.totalPrice}}</td>
+  </tr>
+</table>
+</div>

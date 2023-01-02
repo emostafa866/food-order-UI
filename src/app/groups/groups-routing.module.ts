@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:"",component:AllGroupsComponent},
   {path:"create",component:CreateGroupComponent},
   {path:"group-menu/:id",component:GroupMenuComponent},
-  {path:"group-order",component:GroupOrderComponent}
+  {path:"group-order/:id",component:GroupOrderComponent}
 ];
 
 @NgModule({

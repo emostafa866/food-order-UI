@@ -10,6 +10,7 @@ import { SharedModule } from './../shared/shared.module';
 import { SingleFoodComponent } from './components/single-food/single-food.component';
 import { GroupOrderComponent } from './components/group-order/group-order.component';
 import { SingleOrderComponent } from './single-order/single-order.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 
 
@@ -21,7 +22,8 @@ import { SingleOrderComponent } from './single-order/single-order.component';
     GroupMenuComponent,
     SingleFoodComponent,
     GroupOrderComponent,
-    SingleOrderComponent
+    SingleOrderComponent,
+    OrderSummaryComponent
   ],
   imports: [
     SharedModule,

@@ -4,6 +4,7 @@ import { GroupService } from '../../group.service';
 
 
 
+
 @Component({
   selector: 'app-group-menu',
   templateUrl: './group-menu.component.html',
@@ -103,12 +104,17 @@ export class GroupMenuComponent implements OnInit {
   
     this.groupSer.createUserOrder(this.order,this.id).subscribe((res:any)=>{
       console.log(res);
-      localStorage.clear();
     })
   }
 
   viewGroupOrder() {
-    this.groupSer.getOrderSummaryPerUser(this.id).unsubscribe
+
+    this.groupSer.createTotalOrder(this.id).subscribe((res:any)=>{
+      console.log(res)
+      this.groupSer.getOrderSummaryPerUser(this.id).unsubscribe 
+    })
+    
+    
   }
  
 

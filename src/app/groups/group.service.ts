@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 export class GroupService {
 
   userOrderSummary:any[]=[]
+  ItemOrderSummary:any[]=[]
+
 
 
   constructor(private http: HttpClient,private router: Router) { }
@@ -65,10 +67,20 @@ export class GroupService {
     getOrderSummaryPerUser(groupId: number) {
       return this.http.get(`http://localhost:9090/groups/${groupId}/orders/users`).subscribe((res:any)=>{
         this.userOrderSummary=res;
-        this.router.navigate(['group/group-order'])
+        this.router.navigate(['group/group-order/'+ groupId])
       })
     }
+
+    getOrderSummaryPerItem(groupId: number){
+
+      return this.http.get(`http://localhost:9090/groups/${groupId}/orders/items`);
+
+    }
     
+    createTotalOrder(groupId:any){
+
+      return this.http.post(`http://localhost:9090/groups/${groupId}/orders/create`,groupId)
+    }
 
   
 
