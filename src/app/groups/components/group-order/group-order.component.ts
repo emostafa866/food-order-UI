@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GroupService } from './../../group.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class GroupOrderComponent {
 
   summary:any='users'
 
-  constructor(private groupService : GroupService){}
+  constructor(private groupService : GroupService,private route: ActivatedRoute){}
 
 
   detectChanges(e:any){
@@ -18,6 +19,9 @@ export class GroupOrderComponent {
   this.summary=e.target.value    
 
   console.log(this.summary)
+
+  }
+  finish(){
 
   }
 }
