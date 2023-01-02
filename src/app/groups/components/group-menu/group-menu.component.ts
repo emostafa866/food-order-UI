@@ -21,9 +21,10 @@ export class GroupMenuComponent implements OnInit {
   foodOrders:any[]=[]
   order:any={}
   is_owner:boolean=false;
-  userOrderSummary:any[]=[]
+  userOrderSummary:any[]=[];
+  group_user:any[]=[];
 
-  
+
 
   constructor(private router: Router, private route: ActivatedRoute, private groupSer: GroupService) { }
 
@@ -34,6 +35,7 @@ export class GroupMenuComponent implements OnInit {
 
     this.groupSer.isOwner(this.id).subscribe((res: any) => {
       this.is_owner = res;
+      this.group_user=res.users;
       console.log(res)
     });
 
@@ -51,11 +53,11 @@ export class GroupMenuComponent implements OnInit {
     })
   }
 
- 
+
   acceptUser(userId: number) {
     this.accept_user.groupId = parseInt(this.id+"");
     this.accept_user.userId = userId;
-    
+
     this.groupSer.acceptUser(this.accept_user).subscribe((res: any) => {
       console.log("succues")
     }, error => {
@@ -83,7 +85,7 @@ export class GroupMenuComponent implements OnInit {
 
     if("cart" in localStorage){
       this.carItems=JSON.parse( localStorage.getItem("cart")!)
-      
+
     }
   }
 
@@ -95,13 +97,13 @@ export class GroupMenuComponent implements OnInit {
   }
 
   createOrder(){
-    
+
     for(let item of this.carItems){
       this.foodOrders.push({itemId:item.foodItem.id,quantity:item.quantity,comment:item.comment})
     }
 
     this.order.food=this.foodOrders;
-  
+
     this.groupSer.createUserOrder(this.order,this.id).subscribe((res:any)=>{
       console.log(res);
     })
@@ -111,12 +113,12 @@ export class GroupMenuComponent implements OnInit {
 
     this.groupSer.createTotalOrder(this.id).subscribe((res:any)=>{
       console.log(res)
-      this.groupSer.getOrderSummaryPerUser(this.id).unsubscribe 
+      this.groupSer.getOrderSummaryPerUser(this.id).unsubscribe
     })
-    
-    
+
+
   }
- 
+
 
 
 }
