@@ -57,31 +57,22 @@ export class GroupService {
       return this.http.post(`http://localhost:9090/groups/${groupId}/orders`,model)
     }
 
-    createGroupOrder(groupId:any){
-
-      return this.http.post(`http://localhost:9090/groups/${groupId}/orders/create`,groupId)
-
-    }
+    createGroupOrder(groupId:any){return this.http.post(`http://localhost:9090/groups/${groupId}/orders/create`,groupId)}
 
 
     getOrderSummaryPerUser(groupId: number) {
-      return this.http.get(`http://localhost:9090/groups/${groupId}/orders/users`).subscribe((res:any)=>{
+      return this.http.get(`http://localhost:9090/groups/${groupId}/orders/view`).subscribe((res:any)=>{
         this.userOrderSummary=res;
         this.router.navigate(['group/group-order/'+ groupId])
       })
     }
 
-    getOrderSummaryPerItem(groupId: number){
-
-      return this.http.get(`http://localhost:9090/groups/${groupId}/orders/items`);
-
-    }
+    getOrderSummaryPerItem(groupId: number){  return this.http.get(`http://localhost:9090/groups/${groupId}/orders/items`);}
     
-    createTotalOrder(groupId:any){
-
-      return this.http.post(`http://localhost:9090/groups/${groupId}/orders/create`,groupId)
+    createTotalOrder(groupId:any){return this.http.post(`http://localhost:9090/groups/${groupId}/orders/create`,groupId)}
+    finishGroup(groupId:any){
+      return this.http.post(`http://localhost:9090/groups/finish`,groupId) 
     }
-
   
 
 }

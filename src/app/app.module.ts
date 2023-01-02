@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
      BrowserModule,
     AppRoutingModule,
     SharedModule,
+    BrowserAnimationsModule,
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,

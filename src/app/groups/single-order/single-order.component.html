@@ -1,5 +1,5 @@
-<div *ngFor="let orderSumm of OrderSummary " class="cartBox">
-    <h1>{{orderSumm.username}}</h1>
+<div *ngFor="let orderSumm of OrderSummary1 " class="cartBox">
+    <h1>{{orderSumm.user.name}}</h1>
     <div class="headCart">
     </div>
     <table class="table table-striped">
@@ -9,14 +9,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let orders of orderSumm.orders">
-                <p *ngFor="let item of orders.items"><label class="text-danger">item :</label> {{item.food.name}}  <label class="text-danger">  quantity :</label>{{item.quantity}}  <label class="text-danger">  price :</label> {{item.subOrderPrice}}</p>
+            <tr >
+                <p *ngFor="let item of orderSumm.items"><label class="text-danger">item :</label> {{item.food.name}}  <label class="text-danger">  quantity :</label>{{item.quantity}}  <label class="text-danger">  price :</label> {{item.subOrderPrice}}</p>
             </tr>
         </tbody>
         <tfoot>
-            <tr *ngFor="let orders of orderSumm.orders">
+            <tr >
 
-                <th> Order Price : {{orders.orderPrice}}</th>
+                <th> Order Price : {{orderSumm.orderPrice}}</th>
             </tr>
         </tfoot>
     </table>
