@@ -25,3 +25,39 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+### to access springboot api repo this the link [api repo](https://github.com/emostafa866)
+
+## project screen shots
+
+### user sign up screen
+
+![register screen](/images/sign-up.png)
+
+### user login screen
+
+![login screen](/images/login-screen.png)
+
+### user add group screen
+
+![add group screen](/images/create-group-page.png)
+
+### list and request to join group screen
+
+![list group screen](/images/groups-list.png)
+
+### admin food order screen
+
+![food order screen](/images/admin-order%20-bage.png)
+
+### show groups order per item
+
+![groups item](/images/show-group-items-perOrder.png)
+
+### add restaurant screen
+
+![add restaurant](/images/add-restaurant.png)
+
+### add food to restaurant screen
+
+![add food](/images/add-food-to-restaurant.png)
