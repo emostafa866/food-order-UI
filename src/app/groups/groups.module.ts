@@ -11,6 +11,7 @@ import { SingleFoodComponent } from './components/single-food/single-food.compon
 import { GroupOrderComponent } from './components/group-order/group-order.component';
 import { SingleOrderComponent } from './single-order/single-order.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { FoodDetailsComponent } from './food-details/food-details.component';
 
 
 
@@ -23,7 +24,8 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     SingleFoodComponent,
     GroupOrderComponent,
     SingleOrderComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    FoodDetailsComponent
   ],
   imports: [
     SharedModule,

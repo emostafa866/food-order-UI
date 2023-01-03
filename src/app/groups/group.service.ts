@@ -73,6 +73,11 @@ export class GroupService {
     finishGroup(groupId:any){
       return this.http.post(`http://localhost:9090/groups/finish`,groupId) 
     }
+
+    getFoodId(foodId:any){
+      return this.http.get(`http://localhost:9090/foods/${foodId}`)
+    }
+
   
 
 }

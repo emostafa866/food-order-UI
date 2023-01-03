@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar  navbar-expand-lg bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#" style="color: #FF6605 ;"><img style="height: 50px;"
         src="https://dynamic.brandcrowd.com/asset/logo/3b80a94e-3e91-4d73-a3d5-e5bf738f8d20/logo-search-grid-1x?v=637622859003600000" /></a>
@@ -25,6 +25,10 @@
             routerLinkActive="router-link-active">add food</a>
         </li>
       </ul>
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
       <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/login">Login</a>
       <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/signup"
         style="margin-left: 5px;">SignUp</a>

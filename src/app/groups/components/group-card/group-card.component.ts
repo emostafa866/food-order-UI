@@ -36,9 +36,12 @@ export class GroupCardComponent {
     return localStorage.getItem('auth')
   }
   onClick(id:number) {
+    var x: any = document.getElementById("snackbar");
+    x.className = "show";
     this.user_ask_join.groupId=id
     console.log(this.user_ask_join)
     this.groupServ.askToJoin(this.user_ask_join).subscribe((res: any) => {
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
       console.log("succues join")
     }, error => {
       alert("Error to join")
