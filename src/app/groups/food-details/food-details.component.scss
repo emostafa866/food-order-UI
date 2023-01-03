@@ -1,0 +1,41 @@
+.product-page {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* Style the product image */
+  img {
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+  /* Style the product description */
+  .product-description {
+    padding: 10px;
+  }
+
+  /* Style the comments container */
+  .comments {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Style the comments header */
+  .comments-header {
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  /* Style the comments list */
+  .comments-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Style the comments */
+  .comments-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }

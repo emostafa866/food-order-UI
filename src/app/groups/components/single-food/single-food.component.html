@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-body">
+    <div routerLink="/group/details/{{food.id}}" class="card-body">
         <h5 class="card-title">{{food.name}}</h5>
         <p class="card-text">Price : {{food.price}} $</p>
         <div *ngIf="!addButton" class="row justify-content-md-center">

@@ -8,6 +8,7 @@ import { GroupService } from '../../group.service';
 })
 export class AllGroupsComponent   {
   groups:any=[]
+  wating:boolean=true
   ngOnInit(): void {
 
       this.getGroups();
@@ -18,6 +19,7 @@ export class AllGroupsComponent   {
   getGroups(){
     this.groupServ.getAllGroups().subscribe((res: any) => {
       this.groups = res;
+      this.wating=false
       console.log(res)
     }, error => {
       alert("Error in Get Data")

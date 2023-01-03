@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-single-food',
   templateUrl: './single-food.component.html',
   styleUrls: ['./single-food.component.scss']
 })
-export class SingleFoodComponent {
+export class SingleFoodComponent  {
+
   qty: number = 1;
   addButton= false;
   comment='';
