@@ -1,0 +1,10 @@
+<form  (ngSubmit)="addRestaurant()" >
+  <label for="name">Restaurant Name:</label><br>
+  <input type="text" id="name" name="name" [(ngModel)]="reataurant.name"><br>
+  <label for="phone">Phone:</label><br>
+  <input type="text" id="phone" name="phone" [(ngModel)]="reataurant.phone"  ><br>
+  <label for="food">Existing Food Items:</label><br>
+
+  <br>
+  <input type="submit" value="Submit">
+</form>

@@ -16,6 +16,14 @@
           <a class="nav-link" *ngIf="loggedIn()" aria-current="page" [routerLink]="['/group/create']"
             routerLinkActive="router-link-active">Create Groups</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loggedIn()" aria-current="page" [routerLink]="['/restaurant/create']"
+            routerLinkActive="router-link-active">Create Restaurant</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loggedIn()" aria-current="page" [routerLink]="['/food/add']"
+            routerLinkActive="router-link-active">add food</a>
+        </li>
       </ul>
       <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/login">Login</a>
       <a *ngIf="!loggedIn()" class="btn btn-outline-primary" routerLink="auth/signup"
