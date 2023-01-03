@@ -19,7 +19,7 @@ export class AuthServiceService {
 
   public login(user: UserLogin) {
 
-    return this.http.post<UserLogin>('http://localhost:9090/api/auth/login', user).pipe(
+    return this.http.post<UserLogin>('http://localhost:9090/auth/login', user).pipe(
       tap(res => {
         let token: any = res;
         localStorage.setItem('auth', token.jwt)
@@ -28,7 +28,7 @@ export class AuthServiceService {
 
   }
   public register(user: UserRegister) {
-    return this.http.post<UserRegister>('http://localhost:9090/api/auth/register', user).pipe(
+    return this.http.post<UserRegister>('http://localhost:9090/auth/register', user).pipe(
       tap(res => {
         let token: any = res;
         localStorage.setItem('auth', token.jwt)
