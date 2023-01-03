@@ -106,6 +106,7 @@ export class GroupMenuComponent implements OnInit {
 
     this.groupSer.createUserOrder(this.order,this.id).subscribe((res:any)=>{
       console.log(res);
+      localStorage.removeItem('cart');
     })
   }
 

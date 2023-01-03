@@ -1,13 +1,16 @@
 <div class="container mb-2">
-    <select class="form-control m-2"(change)="detectChanges($event)" >
-    <option value="users">Per User</option>
-    <option value="items"> Per Item</option>
-</select>
-<button class="btn btn-success">Finish</button>
-<app-single-order *ngIf="summary == 'users'"></app-single-order>
-<app-order-summary *ngIf="summary == 'items'"></app-order-summary>
-
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-10">
+            <select class="form-control m-2" (change)="detectChanges($event)">
+                <option value="users">Per User</option>
+                <option value="items"> Per Item</option>
+            </select>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="finish()">Finish Group</button>
+        </div>
+    </div>
+    <app-single-order *ngIf="summary == 'users'"></app-single-order>
+    <app-order-summary *ngIf="summary == 'items'"></app-order-summary>
+    <div id="snackbar">Finishing The Group Successfully...</div>
 </div>
-
-
-
