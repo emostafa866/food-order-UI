@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RestaurantComponent
   ],
   imports: [
      BrowserModule,
